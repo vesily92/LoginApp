@@ -33,6 +33,9 @@
                                         <rect key="frame" x="0.0" y="128" width="334" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="logIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="DCs-ba-kgD"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="SLj-Rd-dAu">
                                         <rect key="frame" x="0.0" y="194" width="334" height="30"/>
@@ -41,10 +44,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="30"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Forgot User Name?"/>
+                                                <connections>
+                                                    <action selector="remindNameOrPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wny-Aq-ZVW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Um-2R-Nbt">
                                                 <rect key="frame" x="211" y="0.0" width="123" height="30"/>
                                                 <state key="normal" title="Forgot Password?"/>
+                                                <connections>
+                                                    <action selector="remindNameOrPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qZW-dU-Ru8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -62,6 +71,13 @@
                             <constraint firstItem="3wx-5d-1an" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="sb8-kt-xW1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forgotNameButton" destination="y8e-jl-WDn" id="SwF-0V-qr2"/>
+                        <outlet property="forgotPasswordButton" destination="9Um-2R-Nbt" id="AVF-fw-tea"/>
+                        <outlet property="logInButton" destination="RNj-dm-JRq" id="D6N-PF-A3f"/>
+                        <outlet property="passwordTextField" destination="l1S-dS-8xw" id="fj0-vB-VOU"/>
+                        <outlet property="usernameTextField" destination="oQI-kP-GZH" id="d2f-3Z-h10"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
