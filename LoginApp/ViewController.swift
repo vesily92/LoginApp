@@ -16,28 +16,65 @@ class ViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    private let username = "User"
+    private let password = "Password"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.hideNavigationBar()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let profileVC = segue.destination as? ProfileViewController else { return }
+        profileVC.welcomeValue = "Welcome, \(username)!"
     }
     
     @IBAction func remindNameOrPassword(_ sender: UIButton) {
         switch sender {
         case forgotNameButton:
-            showAlert(withTitle: "Oops!", andMessage: "Your username is User \u{1F609}")
+            showAlert(
+                withTitle: "Oops!",
+                andMessage: "Your username is \(username) \u{1F609}"
+            )
         default:
-            showAlert(withTitle: "Oops!", andMessage: "Your password is Password \u{1F609}")
+            showAlert(
+                withTitle: "Oops!",
+                andMessage: "Your password is \(password) \u{1F609}"
+            )
         }
     }
     @IBAction func logIn() {
-        showAlert(withTitle: "Invalid login or password", andMessage: "Please, enter correct login and password")
+        if usernameTextField.text != username || passwordTextField.text != password {
+            showAlert(
+                withTitle: "Invalid username or password",
+                andMessage: "Enter correct username and password"
+            )
+        }
+    }
+    
+    @IBAction func logOut(for segue: UIStoryboardSegue) {
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { _ in self.passwordTextField.text = "" })
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: "Ok",
+            style: .default,
+            handler: { _ in
+                self.passwordTextField.text = "" }
+        )
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    private func hideNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
 
