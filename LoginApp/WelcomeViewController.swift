@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         welcomeLabel.textColor = .white
         welcomeLabel.text = welcomeValue
         emojiLabel.text = "\u{1F44B}"
