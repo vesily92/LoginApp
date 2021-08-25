@@ -22,6 +22,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        forgotNameButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        forgotNameButton.titleLabel?.minimumScaleFactor = 0.5
+        
+        forgotPasswordButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        forgotPasswordButton.titleLabel?.minimumScaleFactor = 0.5
+        
         configureTextFields()
         
         passwordTextField.enablesReturnKeyAutomatically = true
@@ -50,6 +56,7 @@ class LoginViewController: UIViewController {
             )
         }
     }
+    
     @IBAction func logIn() {
         if usernameTextField.text != username || passwordTextField.text != password {
             showAlert(
