@@ -24,11 +24,11 @@ class LoginViewController: UIViewController {
         
         forgotNameButton.titleLabel?.adjustsFontSizeToFitWidth = true
         forgotNameButton.titleLabel?.minimumScaleFactor = 0.5
-        
         forgotPasswordButton.titleLabel?.adjustsFontSizeToFitWidth = true
         forgotPasswordButton.titleLabel?.minimumScaleFactor = 0.5
         
-        configureTextFields()
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
         
         passwordTextField.enablesReturnKeyAutomatically = true
     }
@@ -86,11 +86,6 @@ class LoginViewController: UIViewController {
 
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-    
-    private func configureTextFields() {
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
     }
 }
 
