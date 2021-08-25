@@ -38,7 +38,7 @@
                                             <segue destination="rOY-02-N4C" kind="presentation" identifier="SegueOne" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Fpg-80-GAM"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="SLj-Rd-dAu">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SLj-Rd-dAu">
                                         <rect key="frame" x="0.0" y="194" width="334" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8e-jl-WDn">
