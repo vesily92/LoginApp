@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-5d-1an">
-                                <rect key="frame" x="50" y="336" width="314" height="224"/>
+                                <rect key="frame" x="50" y="290" width="314" height="224"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oQI-kP-GZH">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3wx-5d-1an" secondAttribute="trailing" constant="50" id="ASa-AG-bfo"/>
-                            <constraint firstItem="3wx-5d-1an" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g57-Tf-Evm"/>
+                            <constraint firstItem="3wx-5d-1an" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-46" id="g57-Tf-Evm"/>
                             <constraint firstItem="3wx-5d-1an" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="sb8-kt-xW1"/>
                         </constraints>
                     </view>
