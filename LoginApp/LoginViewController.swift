@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet var forgotNameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
@@ -21,12 +21,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideNavigationBar()
+        
+        configureTextFields()
+        
+        passwordTextField.enablesReturnKeyAutomatically = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let profileVC = segue.destination as? ProfileViewController else { return }
+        guard let profileVC = segue.destination as? WelcomeViewController else { return }
         profileVC.welcomeValue = "Welcome, \(username)!"
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
     }
     
     @IBAction func remindNameOrPassword(_ sender: UIButton) {
@@ -69,12 +76,27 @@ class ViewController: UIViewController {
             handler: { _ in
                 self.passwordTextField.text = "" }
         )
+
         alert.addAction(okAction)
         present(alert, animated: true)
     }
     
-    private func hideNavigationBar() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    private func configureTextFields() {
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            logIn()
+            performSegue(withIdentifier: "SegueOne", sender: nil)
+        }
+        return true
     }
 }
 
