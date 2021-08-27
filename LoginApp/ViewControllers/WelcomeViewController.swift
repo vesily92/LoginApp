@@ -14,13 +14,13 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet var logOutButton: UIButton!
     
-    var welcomeValue: String!
+    var usernameValue = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         welcomeLabel.textColor = .white
-        welcomeLabel.text = welcomeValue
+        welcomeLabel.text = "Welcome, \(usernameValue)!"
         emojiLabel.text = "\u{1F44B}"
         
         logOutButton.tintColor = .white
